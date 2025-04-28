@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produits des Étudiants</title>
-    
-</head>
-<body>
-    <!-- inlusion des fifchier se trouvant sur d'autre dossiers -->
-    <?php require 'composants/nav.php'; ?>
+<?php require 'composants/head.php'?>
+<?php require 'composants/nav.php'?>
+<?php require 'composants/header.php'?>
+<?php require 'composants/main.php'?>
+
+
     <?php require 'models/produits-data.php'; ?>
 
     <h1>Tous les produits</h1>

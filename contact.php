@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
-<body>
-    <!-- inclusion du fichier de navigation -->
-    <?php require 'composants/nav.php'; ?>
+<?php require 'composants/head.php'?>
+<?php require 'composants/nav.php'?>
+<?php require 'composants/header.php'?>
+<?php require 'composants/main.php'?>
 
-    <h1>Contactez nous</h1>
-</body>
-</html>
+
+
+
+
+<h1>Contactez nous</h1>
