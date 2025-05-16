@@ -23,4 +23,18 @@ class ProduitModel
         ])->fetchAll();
         return $produits;
     }
+
+    public function create($etudiant_id, $nom, $prix, $devise, $image_name)
+    {
+        //Enregistrer les information du produit dans la bdd
+        $this->db->query("INSERT INTO produits(etudiant_id, nom, prix, devise, image) 
+            VALUES(:etudiant_id, :nom, :prix, :devise, :image)", [
+            "etudiant_id" => $etudiant_id,
+            "nom" => $nom,
+            "prix" => $prix,
+            "devise" => $devise,
+            "image" => $image_name
+
+        ]);
+    }
 }

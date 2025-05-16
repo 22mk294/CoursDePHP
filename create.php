@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+if(!isset($_SESSION["user"])){
+  header('Location: login.php');
+  exit();
+}else{
+
+}
+
+
 require 'models/produits-data.php';
 
 
@@ -17,14 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   move_uploaded_file($image_tmp_name, "uploads/" . $image_name);
 
   //Enregistrer les information du produit dans la bdd
-  $db->query("INSERT INTO produits(etudiant_id, nom, prix, devise, image) VALUES(:etudiant_id, :nom, :prix, :devise, :image)", [
-    "etudiant_id" => $etudiant_id,
-    "nom" => $nom,
-    "prix" => $prix,
-    "devise" => $devise,
-    "image" => $image_name
-
-  ]);
+  $produitModel->create($etudiant_id, $nom, $prix, $devise, $image_name);
+  
   $success = true;
 }
 
