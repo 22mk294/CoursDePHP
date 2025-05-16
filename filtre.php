@@ -13,7 +13,7 @@ $etudiant_id = isset($_GET["etudiant"]) ? intval($_GET["etudiant"]) : 1;
 
 $etudiant = $etudiantModel->find($etudiant_id);
 $nom_etudiant = $etudiant ? $etudiant['nom'] : "";
-$nom_etudiant = "";
+//$nom_etudiant = "";
 // Vérification simple que la liste des étudiants est bien définie et est un tableau
 
 // Condition simple pour générer le titre
@@ -26,11 +26,13 @@ if (!$etudiant) {
 $produitModel = new ProduitModel;
 $produits = $produitModel->filterByEtudiantId($etudiant_id);
 ?>
-<?php require_once 'composants/head.php'; ?>
-<?php require_once 'composants/nav.php'; ?>
 
-<h1 class="text-white text-2xl"><?php echo htmlspecialchars($header); ?></h1>
+<?php require 'composants/head.php'; ?>
+<?php require 'composants/nav.php'; ?>
 
+<h1 class="text-white text-2xl py-3 px-3"><?php echo htmlspecialchars($header); ?></h1>
+
+<section class="bg-white rounded-xl dark:bg-gray-900 py-12 px-8">
 <!-- Liste des étudiants pour filtrage -->
 <div class="my-4 flex flex-wrap gap-2 justify-center">
     <?php foreach ($etudiants as $etudiant) : ?>
@@ -51,8 +53,7 @@ $produits = $produitModel->filterByEtudiantId($etudiant_id);
 <!-- Liste des produits filtrés -->
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center">
     <?php foreach ($produits as $produit) : ?>
-        <?php //if ($produit['etudiant_id'] == $etudiant_id) : 
-        ?>
+        <?php //if ($produit['etudiant_id'] == $etudiant_id) : ?>
         <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="p-8 rounded-t-lg" src="<?php echo "uploads/" . htmlspecialchars($produit['image']); ?>" alt="<?php echo htmlspecialchars($produit['nom']); ?>">
@@ -80,5 +81,6 @@ $produits = $produitModel->filterByEtudiantId($etudiant_id);
         ?>
     <?php endforeach; ?>
 </div>
+</section>
 
 <?php require_once 'composants/footer.php'; ?>

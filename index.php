@@ -21,7 +21,7 @@ require 'models/articles-data.php';
             <strong>:<?php echo $prix . ' ' . $devise; ?></strong>
         </p>
 
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-300">
 
         <div>
             <h3 class="mb-6 text-4xl font-extrabold dark:text-white">Les noms de tous les articles</h3>
@@ -70,7 +70,7 @@ require 'models/articles-data.php';
                         <li class="pb-3 sm:pb-4">
                             <div class="flex items-center space-x-4 rtl:space-x-reverse">
                                 <div class="shrink-0">
-                                    <img class="w-8 h-8 rounded-full object-cover object-center" src="./assets/images/logo.png"
+                                    <img class="w-8 h-8 rounded-full object-cover object-center" src="uploads/montre_noir.png"
                                         alt="<?php echo $name; ?>">
                                 </div>
                                 <div class="flex-1 min-w-0">
